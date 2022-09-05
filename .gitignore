@@ -1,0 +1,21 @@
+# due to using tox and pytest
+.tox
+.cache
+.pypirc
+.idea
+.DS_Store
+*/venv/*
+*.log
+*.log.*
+# general things to ignore
+*/build/
+*/dist/
+*.egg-info/
+*.egg
+*.py[cod]
+__pycache__/
+*.so
+*~
+*/conf/*
+*/test/*
+
