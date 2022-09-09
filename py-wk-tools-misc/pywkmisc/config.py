@@ -3,9 +3,12 @@
 import os
 import json
 import jsonpath
+from .file_utils import FileUtils
 
 
 class Config(object):
+
+    _extensions = ['.json']
 
     def __init__(self, cfp=None):
         self._cfp = cfp     # config_folder_path
@@ -27,8 +30,10 @@ class Config(object):
 
     def _get_config(self):
         for file in os.listdir(self._cfp):
-            with open('{path}{file}'.format(path=self._cfp, file=file), 'r', encoding='utf8') as f:
-                self._config[file.split('.', 2)[0]] = json.load(f)
+            f = FileUtils('{path}{file}'.format(path=self._cfp, file=file))
+            if f.extension in self._extensions:
+                with open(f.filepath, 'r', encoding='utf8') as f2:
+                    self._config[file.split('.', 2)[0]] = json.load(f2)
 
     def get_basic(self, key):
         return self.get('base',key)

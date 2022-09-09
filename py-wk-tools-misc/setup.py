@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Pywkmisc',                                           # 打包起来的包的文件名
-    version='1.0.5.1',                                            # 版本号,添加为打包文件的后缀名
+    version='1.0.5.2',                                            # 版本号,添加为打包文件的后缀名
     keywords='wangkai python misc tools ',
     description='wangkai python misc tools',                         # 对项目简短的一个形容
     license='MIT License',                                      # 支持的开源协议
